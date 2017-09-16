@@ -15,7 +15,7 @@ def get_posts(request):
     return render(request, "blogposts.html", {'posts': posts})
 
 
-def post_detail(request, id):
+def post_detail(request, pk):
     """
     Create a view that return a single
     Post object based on the post ID and
@@ -23,35 +23,18 @@ def post_detail(request, id):
     template. Or return a 404 error if the
     post is not found
     """
-    post = get_object_or_404(Post, pk=id)
+    post = get_object_or_404(Post, pk=pk)
     post.views += 1
     post.save()
     return render(request, "postdetail.html", {'post': post})
 
 
-def new_post(request):
-    if request.method == "POST":
-        form = BlogPostForm(request.POST, request.FILES)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.published_date = timezone.now()
-            post.save()
-            return redirect(post_detail, post.pk)
-    else:
-        form = BlogPostForm()
-    return render(request, 'blogpostform.html', {'form': form})
-
-
-def edit_post(request, id):
-    post = get_object_or_404(Post, pk=id)
+def create_or_edit_post(request, pk=None):
+    post = get_object_or_404(Post, pk=pk) if pk else None
     if request.method == "POST":
         form = BlogPostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.published_date = timezone.now()
-            post.save()
+            post = form.save()
             return redirect(post_detail, post.pk)
     else:
         form = BlogPostForm(instance=post)
