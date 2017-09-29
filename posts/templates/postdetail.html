@@ -21,9 +21,6 @@
                     <a href="{% url 'get_posts' %}" class="btn btn-default">Back To Blog</a>
                     <a href="{% url 'edit_post' post.id %}" class="btn btn-default">Edit Post</a>
                     <hr>
-                    {% load disqus_tags %}
-                    {% set_disqus_title post.title %}
-                    {% disqus_show_comments %}
                 </div>
             </div>
         </div>
