@@ -25,7 +25,7 @@ SECRET_KEY = '%$(u-x335x761lcj9&alz%ttd+yi-goo@4=k=o27j=(l921l3l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['blog-miniproject1-nakitamccool.c9users.io', '127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', os.environ.get('C9_HOSTNAME')]
 
 
 # Application definition
