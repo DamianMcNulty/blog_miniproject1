@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/DamianMcNulty/blog_miniproject1.svg?branch=master)](https://travis-ci.org/DamianMcNulty/blog_miniproject)
+[![Build Status](https://travis-ci.org/DamianMcNulty/blog_miniproject1.svg?branch=master)](https://travis-ci.org/DamianMcNulty/blog_miniproject1)
 
 # Stream 3 Blog
 
