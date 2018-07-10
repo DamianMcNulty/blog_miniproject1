@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Code-Institute-Solutions/blog_miniproject1.svg?branch=master)](https://travis-ci.org/Code-Institute-Solutions/blog_miniproject1)
+[![Build Status](https://travis-ci.org/DamianMcNulty/blog_miniproject1.svg?branch=master)](https://travis-ci.org/DamianMcNulty/blog_miniproject)
 
 # Stream 3 Blog
 
